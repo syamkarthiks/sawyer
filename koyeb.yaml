@@ -1,0 +1,32 @@
+services:
+  - name: sawyer-bot
+    type: web
+    runtime: nodejs
+    build:
+      command: npm install
+    run:
+      command: npm start
+    ports:
+      - port: 3000
+        protocol: http
+    env:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
+      - key: PREFIX
+        value: "."
+      - key: OWNER_NUMBER
+        value: "919888280858"
+      - key: BOT_NAME
+        value: "Sawyer Bot"
+      - key: OWNER_NAME
+        value: "Syam"
+      - key: SUDO_NUMBERS
+        value: "919888280858"
+      - key: PRIVATE_MODE
+        value: "false"
+      - key: SESSION_DIR
+        value: "/tmp/sawyer-session"
+      - key: SESSION_ID
+        value: ""   # ⚠️ Set this in Koyeb dashboard → Service → Environment

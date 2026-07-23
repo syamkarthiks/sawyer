@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: sawyer-bot
+    env: node
+    plan: free
+    region: singapore  # closest to India for low latency
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000  # Render assigns its own port via $PORT env var at runtime
+      - key: PREFIX
+        value: .
+      - key: OWNER_NUMBER
+        value: 919888280858
+      - key: BOT_NAME
+        value: Sawyer Bot
+      - key: OWNER_NAME
+        value: Syam
+      - key: SUDO_NUMBERS
+        value: 919888280858
+      - key: PRIVATE_MODE
+        value: false
+      - key: SESSION_DIR
+        value: /tmp/sawyer-session
+      - key: SESSION_ID
+        sync: false  # Set this manually in Render dashboard — keep secret!

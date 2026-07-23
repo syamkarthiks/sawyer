@@ -1,0 +1,9 @@
+node_modules
+.env
+session*
+data/*.json
+*.log
+.DS_Store
+.gemini
+package-lock.json
+node_modules
